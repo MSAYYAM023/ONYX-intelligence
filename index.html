@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f0f2f5;
-            color: #111827;
+            background: #0a0a1a;
+            color: #e0e0e0;
             line-height: 1.6;
         }
 
@@ -24,34 +24,103 @@
             padding: 2rem;
         }
 
-        /* Header - Bold & Modern */
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,107,43,0.3);
+        }
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #ff6b2b;
+            color: #ff6b2b;
+            padding: 0.6rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: #ff6b2b;
+            color: #0a0a1a;
+            transform: translateY(-2px);
+        }
+        .nav-btn-primary {
+            background: #ff6b2b;
+            color: #0a0a1a;
+        }
+        .nav-btn-primary:hover {
+            background: #ff8c5a;
+            border-color: #ff8c5a;
+        }
+
+        /* Header */
         .header {
             text-align: center;
             padding: 3rem 2rem;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
+            background: linear-gradient(135deg, #0f0f2a 0%, #1a1a3a 100%);
             border-radius: 2rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,107,43,0.3);
         }
         .header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #ff6b2b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .header p {
-            font-size: 1.3rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            color: #c0c0d0;
         }
         .badge {
             display: inline-block;
-            background: #f97316;
+            background: #ff6b2b;
             padding: 0.5rem 1.5rem;
             border-radius: 2rem;
             font-size: 0.9rem;
             font-weight: bold;
             margin-top: 1.5rem;
-            color: white;
+            color: #0a0a1a;
+        }
+
+        /* GitHub Invitation Banner */
+        .github-banner {
+            background: linear-gradient(90deg, #1a1a3a 0%, #2a2a4a 100%);
+            border-left: 5px solid #ff6b2b;
+            padding: 1.2rem 2rem;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .github-banner p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .github-banner strong {
+            color: #ff6b2b;
+        }
+        .github-btn {
+            background: #ff6b2b;
+            color: #0a0a1a;
+            padding: 0.6rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .github-btn:hover {
+            background: #ff8c5a;
+            transform: scale(1.05);
         }
 
         .section-title {
@@ -59,11 +128,12 @@
             font-weight: 800;
             margin: 2.5rem 0 1.5rem 0;
             padding-bottom: 0.5rem;
-            border-bottom: 4px solid #f97316;
+            border-bottom: 3px solid #ff6b2b;
             display: inline-block;
+            color: #ffffff;
         }
 
-        /* Pricing Cards - Bold Design */
+        /* Pricing Cards */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -71,33 +141,32 @@
             margin: 2rem 0;
         }
         .card {
-            background: white;
+            background: #11112a;
             border-radius: 1.5rem;
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
             transition: transform 0.2s, box-shadow 0.2s;
-            border-top: 5px solid #f97316;
+            border: 1px solid #2a2a4a;
         }
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 30px -15px rgba(255,107,43,0.2);
+            border-color: #ff6b2b;
         }
         .card h3 {
             font-size: 1.8rem;
             font-weight: 800;
-            color: #0f172a;
+            color: #ff6b2b;
             margin-bottom: 1rem;
         }
         .price {
             font-size: 2.8rem;
             font-weight: 800;
-            color: #f97316;
+            color: #ffffff;
             margin: 1rem 0;
         }
         .price small {
             font-size: 1rem;
-            font-weight: normal;
-            color: #4b5563;
+            color: #8888aa;
         }
         .features {
             list-style: none;
@@ -105,11 +174,11 @@
         }
         .features li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #2a2a4a;
         }
         .features li::before {
             content: "✓ ";
-            color: #f97316;
+            color: #ff6b2b;
             font-weight: bold;
         }
 
@@ -117,42 +186,48 @@
         .table-wrapper {
             overflow-x: auto;
             margin: 1.5rem 0;
-            background: white;
+            background: #11112a;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border: 1px solid #2a2a4a;
         }
         table {
             width: 100%;
             border-collapse: collapse;
         }
         th {
-            background: #0f172a;
-            color: white;
+            background: #ff6b2b;
+            color: #0a0a1a;
             padding: 1rem;
             font-weight: 600;
         }
         td {
             padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #2a2a4a;
+            color: #e0e0e0;
         }
 
         .portfolio-box {
-            background: white;
+            background: #11112a;
             padding: 2rem;
             border-radius: 1rem;
             margin: 1.5rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            border-left: 5px solid #f97316;
+            border-left: 5px solid #ff6b2b;
+            border: 1px solid #2a2a4a;
+        }
+        .portfolio-box a {
+            color: #ff6b2b;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         /* Contact Section */
         .contact-box {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
+            background: linear-gradient(135deg, #11112a 0%, #1a1a3a 100%);
             padding: 2.5rem;
             border-radius: 1.5rem;
             text-align: center;
             margin: 2rem 0;
+            border: 1px solid #ff6b2b;
         }
         .contact-links {
             display: flex;
@@ -162,40 +237,39 @@
             margin: 2rem 0 1rem;
         }
         .contact-btn {
-            background: #f97316;
+            background: #ff6b2b;
             padding: 0.8rem 2rem;
             border-radius: 3rem;
             text-decoration: none;
-            color: white;
+            color: #0a0a1a;
             font-weight: bold;
             transition: all 0.2s;
-            display: inline-block;
         }
         .contact-btn:hover {
-            background: #ea580c;
+            background: #ff8c5a;
             transform: scale(1.03);
         }
         .contact-email {
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.1);
+            font-size: 1.1rem;
+            background: rgba(255,107,43,0.15);
             display: inline-block;
             padding: 0.5rem 1.5rem;
             border-radius: 2rem;
         }
         .contact-email a {
-            color: white;
+            color: #ff6b2b;
             text-decoration: none;
         }
 
         .faq-item {
-            background: white;
+            background: #11112a;
             margin: 1rem 0;
             padding: 1.5rem;
             border-radius: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #2a2a4a;
         }
         .faq-item strong {
-            color: #0f172a;
+            color: #ff6b2b;
             font-size: 1.1rem;
             display: block;
             margin-bottom: 0.5rem;
@@ -204,8 +278,8 @@
         .footer {
             text-align: center;
             padding: 2rem;
-            color: #6b7280;
-            border-top: 1px solid #d1d5db;
+            color: #8888aa;
+            border-top: 1px solid #2a2a4a;
             margin-top: 3rem;
         }
 
@@ -214,18 +288,31 @@
             .header h1 { font-size: 2rem; }
             .price { font-size: 2.2rem; }
             .section-title { font-size: 1.6rem; }
-            .contact-links { flex-direction: column; align-items: center; }
+            .github-banner { flex-direction: column; text-align: center; }
+            .navbar { justify-content: center; }
         }
     </style>
 </head>
 <body>
 <div class="container">
 
+    <!-- Navigation Buttons at Top -->
+    <div class="navbar">
+        <a href="#contact" class="nav-btn">📞 Contact</a>
+        <a href="https://github.com/MSAYYAM023" target="_blank" class="nav-btn nav-btn-primary">🐙 GitHub Profile</a>
+    </div>
+
     <!-- Header -->
     <div class="header">
         <h1>⚫ ONYX INTELLIGENCE</h1>
         <p>Professional Web Scraping & Data Extraction</p>
-        <div class="badge">🚀 Python • BeautifulSoup • Pandas</div>
+        <div class="badge">🚀 Python • BeautifulSoup • Pandas • Selenium</div>
+    </div>
+
+    <!-- GitHub Invitation Banner - Refined Sentence -->
+    <div class="github-banner">
+        <p>📂 <strong>See my work in action?</strong> Explore my complete portfolio — Python scripts, datasets, and real scraping projects.</p>
+        <a href="https://github.com/MSAYYAM023/ONYX-intelligence" target="_blank" class="github-btn">🔗 Visit GitHub Repository →</a>
     </div>
 
     <!-- What I Do -->
@@ -288,15 +375,15 @@
         <p><strong>✅ Recent Project:</strong> Scraped 1,000+ products from an e-commerce site with complete pricing analysis.</p>
         <p><strong>🛠️ Tech Stack:</strong> Python, Requests, BeautifulSoup, Pandas</p>
         <p><strong>📈 Output:</strong> Automated pricing report with statistics (cheapest, most expensive, average price, distribution).</p>
-        <p><strong>🐙 View all code:</strong> <a href="https://github.com/MSAYYAM023" target="_blank" style="color:#f97316; font-weight:bold;">github.com/MSAYYAM023</a> (See my ONYX-intelligence and other projects)</p>
+        <p><strong>🐙 All code & datasets:</strong> <a href="https://github.com/MSAYYAM023/ONYX-intelligence" target="_blank">github.com/MSAYYAM023/ONYX-intelligence</a> — See scripts, CSVs, and documentation.</p>
     </div>
 
-    <!-- Contact Section - Fixed Email -->
-    <h2 class="section-title">📞 Contact Me</h2>
+    <!-- Contact Section -->
+    <h2 class="section-title" id="contact">📞 Contact Me</h2>
     <div class="contact-box">
         <p style="font-size: 1.3rem; margin-bottom: 1rem;">Ready to start your project? Let's talk.</p>
         <div class="contact-links">
-            <a href="https://www.fiverr.com/" target="_blank" class="contact-btn" id="fiverrLinkBtn">💼 Hire on Fiverr</a>
+            <a href="#" class="contact-btn" id="fiverrLinkBtn">💼 Hire on Fiverr</a>
             <a href="https://github.com/MSAYYAM023" target="_blank" class="contact-btn">🐙 GitHub Profile</a>
         </div>
         <div class="contact-email">
@@ -312,7 +399,7 @@
     <div class="faq-item"><strong>🔹 How do I pay?</strong> Through Fiverr (secure payment) or Wise for direct clients.</div>
     <div class="faq-item"><strong>🔹 What is your delivery time?</strong> Basic: 2 days, Standard: 3 days, Premium: 5 days.</div>
 
-    <!-- Footer - Location Removed -->
+    <!-- Footer -->
     <div class="footer">
         <p>© 2026 Onyx Intelligence — Fast, Clean, Reliable Data Extraction</p>
         <p style="margin-top: 0.5rem;">🌐 Worldwide Services | 100% Client Satisfaction</p>
@@ -320,17 +407,17 @@
 </div>
 
 <script>
-    // Simple script to handle Fiverr link - you can replace '#' with your actual gig link later
+    // Fiverr link - replace with your actual gig link after publishing
     const fiverrBtn = document.getElementById('fiverrLinkBtn');
-    // When you get your Fiverr gig link, replace the URL below:
     const yourFiverrGigLink = 'https://www.fiverr.com/'; // <-- PASTE YOUR FULL FIVERR GIG LINK HERE
+    
     if (yourFiverrGigLink !== 'https://www.fiverr.com/') {
         fiverrBtn.href = yourFiverrGigLink;
     } else {
-        fiverrBtn.href = '#'; // Placeholder
+        fiverrBtn.href = '#';
         fiverrBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('My Fiverr gig link will be added here soon. For now, please email me directly.');
+            alert('My Fiverr gig is being finalized. For now, please email me directly at m.sayyam023@gmail.com');
         });
     }
 </script>
